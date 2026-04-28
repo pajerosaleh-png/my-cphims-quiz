@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "domain": "Healthcare Environment",
+    "question": "Which type of hospital ownership is typically characterized by being owned by the community and reinvesting profits back into the facility?",
+    "options": ["For-profit", "Not-for-profit", "Government-owned", "Physician-owned"],
+    "answer": "Not-for-profit",
+    "explanation": "Not-for-profit hospitals are often community-owned and are required to reinvest any surplus revenue back into the organization to support its mission."
+  },
+  {
+    "id": 2,
+    "domain": "Technology Environment",
+    "question": "Which of the following is a primary goal of 'Interoperability' in healthcare IT?",
+    "options": ["To ensure all data is stored in a single database", "To allow different information systems to communicate and exchange data", "To prevent unauthorized access to patient records", "To increase the speed of internet connections in hospitals"],
+    "answer": "To allow different information systems to communicate and exchange data",
+    "explanation": "Interoperability refers to the ability of different information systems, devices, and applications to access, exchange, integrate, and cooperatively use data in a coordinated manner."
+  },
+  {
+    "id": 3,
+    "domain": "Clinical Informatics",
+    "question": "What is the primary purpose of Clinical Decision Support (CDS) tools?",
+    "options": ["To replace the physician's judgment", "To provide clinicians with person-specific information to enhance health and healthcare", "To automate the billing process", "To store historical patient records"],
+    "answer": "To provide clinicians with person-specific information to enhance health and healthcare",
+    "explanation": "CDS tools provide clinicians, staff, patients, or other individuals with knowledge and person-specific information, intelligently filtered or presented at appropriate times, to enhance health and healthcare."
+  },
+  {
+    "id": 4,
+    "domain": "Analysis",
+    "question": "During a needs analysis, which tool is most effective for visualizing the current state of a clinical process?",
+    "options": ["Cost-benefit analysis", "Workflow and process mapping", "Request for Proposal (RFP)", "System integration testing"],
+    "answer": "Workflow and process mapping",
+    "explanation": "Workflow and process mapping allows stakeholders to visualize and understand the steps, participants, and information flow in a current process, identifying bottlenecks and opportunities for improvement."
+  },
+  {
+    "id": 5,
+    "domain": "Design",
+    "question": "Which design principle focuses on the ease of use and learnability of a system for its intended users?",
+    "options": ["Scalability", "Usability", "Redundancy", "Interoperability"],
+    "answer": "Usability",
+    "explanation": "Usability is a measure of how well a specific user in a specific context can use a product/design to achieve a defined goal effectively, efficiently, and satisfactorily."
+  },
+  {
+    "id": 6,
+    "domain": "Selection, Implementation, Support and Maintenance",
+    "question": "What is the primary purpose of a 'Business Continuity Plan' (BCP)?",
+    "options": ["To ensure the system is implemented on time", "To maintain essential functions during and after a disaster", "To train users on the new system", "To evaluate the performance of the vendor"],
+    "answer": "To maintain essential functions during and after a disaster",
+    "explanation": "A Business Continuity Plan (BCP) is a process that outlines how a business will continue to operate during an unplanned disruption in service."
+  },
+  {
+    "id": 7,
+    "domain": "Testing and Evaluation",
+    "question": "Which type of testing is performed to ensure that a new system works correctly with existing systems?",
+    "options": ["Unit testing", "Integration testing", "User Acceptance Testing (UAT)", "Stress testing"],
+    "answer": "Integration testing",
+    "explanation": "Integration testing is a level of software testing where individual units are combined and tested as a group to expose faults in the interaction between integrated units."
+  },
+  {
+    "id": 8,
+    "domain": "Privacy and Security",
+    "question": "In the context of information security, what does the 'Integrity' component of the CIA triad refer to?",
+    "options": ["Ensuring data is available when needed", "Protecting data from unauthorized disclosure", "Ensuring data has not been altered or destroyed in an unauthorized manner", "Verifying the identity of the user"],
+    "answer": "Ensuring data has not been altered or destroyed in an unauthorized manner",
+    "explanation": "Integrity involves maintaining the consistency, accuracy, and trustworthiness of data over its entire life cycle."
+  },
+  {
+    "id": 9,
+    "domain": "Management and Leadership",
+    "question": "Which document outlines an organization's long-term goals and the strategies to achieve them?",
+    "options": ["Project Charter", "Strategic Plan", "Operational Budget", "Service Level Agreement (SLA)"],
+    "answer": "Strategic Plan",
+    "explanation": "A strategic plan is a document used to communicate the organization's goals, the actions needed to achieve those goals, and all of the other critical elements developed during the planning exercise."
+  },
+  {
+    "id": 10,
+    "domain": "Management and Leadership",
+    "question": "What is the primary role of a Steering Committee in a healthcare IT project?",
+    "options": ["To write the code for the application", "To provide high-level oversight and decision-making authority", "To perform daily system maintenance", "To conduct user training sessions"],
+    "answer": "To provide high-level oversight and decision-making authority",
+    "explanation": "A steering committee is a group of high-level stakeholders who provide guidance on a project's strategic direction and make key decisions regarding scope, budget, and timeline."
+  }
+]
