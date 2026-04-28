@@ -78,5 +78,725 @@
     "options": ["To write the code for the application", "To provide high-level oversight and decision-making authority", "To perform daily system maintenance", "To conduct user training sessions"],
     "answer": "To provide high-level oversight and decision-making authority",
     "explanation": "A steering committee is a group of high-level stakeholders who provide guidance on a project's strategic direction and make key decisions regarding scope, budget, and timeline."
+  },
+  {
+    "id": 11,
+    "domain": "Healthcare Environment",
+    "question": "Which regulatory framework establishes standards for the protection of patient health information in the United States?",
+    "options": ["HIPAA", "GDPR", "HITECH Act", "HL7"],
+    "answer": "HIPAA",
+    "explanation": "The Health Insurance Portability and Accountability Act (HIPAA) sets national standards for protecting patient health information and privacy."
+  },
+  {
+    "id": 12,
+    "domain": "Healthcare Environment",
+    "question": "What is the primary objective of the Meaningful Use program?",
+    "options": ["To increase hospital revenue", "To promote the adoption and meaningful use of certified EHR technology", "To eliminate paper medical records", "To reduce healthcare costs by 50%"],
+    "answer": "To promote the adoption and meaningful use of certified EHR technology",
+    "explanation": "Meaningful Use is a program that provides incentives for healthcare providers to adopt and use certified Electronic Health Record (EHR) technology to improve patient care."
+  },
+  {
+    "id": 13,
+    "domain": "Technology Environment",
+    "question": "Which architecture model allows healthcare organizations to access computing resources and software applications over the internet?",
+    "options": ["Client-server", "Cloud computing", "Peer-to-peer", "Mainframe"],
+    "answer": "Cloud computing",
+    "explanation": "Cloud computing provides on-demand access to computing resources and applications over the internet, allowing organizations to scale resources as needed."
+  },
+  {
+    "id": 14,
+    "domain": "Technology Environment",
+    "question": "What is the primary purpose of an Electronic Health Record (EHR) system?",
+    "options": ["To manage hospital finances", "To create a digital version of a patient's medical history", "To schedule appointments only", "To store billing information"],
+    "answer": "To create a digital version of a patient's medical history",
+    "explanation": "An EHR is a digital version of a patient's paper chart that contains the medical and treatment history of the patient and can be shared across different healthcare settings."
+  },
+  {
+    "id": 15,
+    "domain": "Clinical Informatics",
+    "question": "Which standard is used to exchange clinical information between healthcare systems?",
+    "options": ["HL7", "DICOM", "SNOMED CT", "LOINC"],
+    "answer": "HL7",
+    "explanation": "HL7 (Health Level 7) is a set of international standards for the exchange, integration, sharing, and retrieval of electronic health information."
+  },
+  {
+    "id": 16,
+    "domain": "Clinical Informatics",
+    "question": "What does SNOMED CT stand for?",
+    "options": ["Systematized Nomenclature of Medicine Clinical Terms", "System Nomenclature of Medical Coding Terms", "Standardized Nomenclature of Medical Clinical Terminology", "Systematic Network of Medical Clinical Terminology"],
+    "answer": "Systematized Nomenclature of Medicine Clinical Terms",
+    "explanation": "SNOMED CT is a comprehensive, multilingual clinical healthcare terminology that enables consistent representation of clinical content in health records."
+  },
+  {
+    "id": 17,
+    "domain": "Analysis",
+    "question": "Which phase of the Systems Development Life Cycle (SDLC) involves identifying business requirements and defining project scope?",
+    "options": ["Design", "Planning and Requirements", "Implementation", "Maintenance"],
+    "answer": "Planning and Requirements",
+    "explanation": "The planning and requirements phase involves identifying business needs, defining project scope, and establishing project objectives and constraints."
+  },
+  {
+    "id": 18,
+    "domain": "Analysis",
+    "question": "What is a 'Stakeholder' in the context of healthcare IT project management?",
+    "options": ["A person who owns the hospital", "Any person or group affected by or having interest in the project", "Only the IT department staff", "The project manager only"],
+    "answer": "Any person or group affected by or having interest in the project",
+    "explanation": "Stakeholders include anyone who has an interest in or is affected by the project, including end-users, administrators, clinicians, and IT staff."
+  },
+  {
+    "id": 19,
+    "domain": "Design",
+    "question": "Which design approach emphasizes user involvement throughout the development process?",
+    "options": ["Waterfall design", "User-centered design", "Agile design", "Top-down design"],
+    "answer": "User-centered design",
+    "explanation": "User-centered design involves understanding user needs, preferences, and behaviors, and incorporating this understanding into the design process."
+  },
+  {
+    "id": 20,
+    "domain": "Design",
+    "question": "What is the primary goal of 'Information Architecture' in system design?",
+    "options": ["To improve system performance", "To organize and structure information in a way that is intuitive to users", "To reduce development costs", "To increase system security"],
+    "answer": "To organize and structure information in a way that is intuitive to users",
+    "explanation": "Information architecture involves organizing, structuring, and labeling content in an effective and sustainable way to help users find and understand information."
+  },
+  {
+    "id": 21,
+    "domain": "Selection, Implementation, Support and Maintenance",
+    "question": "What is the primary purpose of a 'Request for Proposal' (RFP) in vendor selection?",
+    "options": ["To train users on the new system", "To solicit detailed proposals from potential vendors", "To test the system before implementation", "To document system requirements only"],
+    "answer": "To solicit detailed proposals from potential vendors",
+    "explanation": "An RFP is a formal document that describes the organization's requirements and invites vendors to submit detailed proposals on how they would meet those requirements."
+  },
+  {
+    "id": 22,
+    "domain": "Selection, Implementation, Support and Maintenance",
+    "question": "Which implementation approach involves running the old and new systems in parallel for a period of time?",
+    "options": ["Big bang implementation", "Parallel implementation", "Phased implementation", "Pilot implementation"],
+    "answer": "Parallel implementation",
+    "explanation": "Parallel implementation involves running both the old and new systems simultaneously for a period of time to ensure the new system is working correctly before decommissioning the old system."
+  },
+  {
+    "id": 23,
+    "domain": "Testing and Evaluation",
+    "question": "What is 'User Acceptance Testing' (UAT)?",
+    "options": ["Testing performed by IT staff to check for bugs", "Testing performed by end-users to verify the system meets their requirements", "Testing to ensure the system can handle peak loads", "Testing to ensure data security"],
+    "answer": "Testing performed by end-users to verify the system meets their requirements",
+    "explanation": "UAT is the final phase of testing where actual end-users test the system to verify that it meets their business requirements and is ready for production use."
+  },
+  {
+    "id": 24,
+    "domain": "Testing and Evaluation",
+    "question": "Which metric is used to measure the effectiveness of a healthcare IT system?",
+    "options": ["Lines of code", "Return on Investment (ROI)", "Number of bugs found", "Development time"],
+    "answer": "Return on Investment (ROI)",
+    "explanation": "ROI measures the financial benefit of an investment relative to its cost, helping organizations assess the value and effectiveness of healthcare IT systems."
+  },
+  {
+    "id": 25,
+    "domain": "Privacy and Security",
+    "question": "What does 'Confidentiality' mean in the context of healthcare information security?",
+    "options": ["Data is available when needed", "Data has not been altered", "Data is protected from unauthorized access or disclosure", "Data is backed up regularly"],
+    "answer": "Data is protected from unauthorized access or disclosure",
+    "explanation": "Confidentiality ensures that sensitive information is protected from unauthorized access or disclosure, which is critical in healthcare where patient privacy is paramount."
+  },
+  {
+    "id": 26,
+    "domain": "Privacy and Security",
+    "question": "What is the primary purpose of 'Role-Based Access Control' (RBAC)?",
+    "options": ["To increase system performance", "To ensure users have access only to information necessary for their role", "To eliminate the need for passwords", "To reduce system complexity"],
+    "answer": "To ensure users have access only to information necessary for their role",
+    "explanation": "RBAC restricts system access based on a user's role within the organization, ensuring users can only access information and functions necessary for their job responsibilities."
+  },
+  {
+    "id": 27,
+    "domain": "Management and Leadership",
+    "question": "What is 'Change Management' in the context of healthcare IT implementation?",
+    "options": ["Modifying the system code", "The process of managing the transition from old to new systems and helping users adapt", "Changing the project timeline", "Updating the project budget"],
+    "answer": "The process of managing the transition from old to new systems and helping users adapt",
+    "explanation": "Change management involves planning and implementing strategies to help users understand and adapt to new systems, processes, and ways of working."
+  },
+  {
+    "id": 28,
+    "domain": "Management and Leadership",
+    "question": "Which leadership style emphasizes collaboration and involves team members in decision-making?",
+    "options": ["Autocratic", "Democratic", "Laissez-faire", "Authoritarian"],
+    "answer": "Democratic",
+    "explanation": "Democratic leadership encourages participation and collaboration from team members, leading to higher engagement and better decision-making in many situations."
+  },
+  {
+    "id": 29,
+    "domain": "Healthcare Environment",
+    "question": "What is the primary focus of 'Value-Based Care'?",
+    "options": ["Maximizing revenue", "Providing high-quality care at lower costs", "Reducing patient visits", "Increasing hospital profits"],
+    "answer": "Providing high-quality care at lower costs",
+    "explanation": "Value-based care focuses on improving patient outcomes while reducing costs, shifting from volume-based to outcome-based payment models."
+  },
+  {
+    "id": 30,
+    "domain": "Healthcare Environment",
+    "question": "Which organization sets standards for healthcare quality and accreditation?",
+    "options": ["FDA", "The Joint Commission", "CDC", "NIH"],
+    "answer": "The Joint Commission",
+    "explanation": "The Joint Commission is an independent, nonprofit organization that accredits and certifies healthcare organizations based on established quality and safety standards."
+  },
+  {
+    "id": 31,
+    "domain": "Technology Environment",
+    "question": "What is 'Health Information Exchange' (HIE)?",
+    "options": ["A type of hospital", "The electronic movement of health information between organizations", "A software application", "A type of insurance"],
+    "answer": "The electronic movement of health information between organizations",
+    "explanation": "HIE enables the secure electronic exchange of health information between different healthcare organizations to improve care coordination and patient outcomes."
+  },
+  {
+    "id": 32,
+    "domain": "Technology Environment",
+    "question": "Which technology enables secure communication over the internet?",
+    "options": ["HTTP", "HTTPS", "FTP", "SMTP"],
+    "answer": "HTTPS",
+    "explanation": "HTTPS (HyperText Transfer Protocol Secure) uses encryption to secure data transmitted over the internet, protecting sensitive information from interception."
+  },
+  {
+    "id": 33,
+    "domain": "Clinical Informatics",
+    "question": "What is 'Telemedicine'?",
+    "options": ["Using telephone for patient communication", "The delivery of healthcare services using telecommunications technology", "A type of medical insurance", "A hospital department"],
+    "answer": "The delivery of healthcare services using telecommunications technology",
+    "explanation": "Telemedicine uses telecommunications technology to deliver clinical care remotely, improving access to healthcare services and reducing travel time for patients."
+  },
+  {
+    "id": 34,
+    "domain": "Clinical Informatics",
+    "question": "What is the primary purpose of 'Computerized Physician Order Entry' (CPOE)?",
+    "options": ["To replace nurses", "To allow physicians to enter medical orders electronically", "To manage hospital finances", "To schedule surgeries"],
+    "answer": "To allow physicians to enter medical orders electronically",
+    "explanation": "CPOE systems allow physicians to enter medication, laboratory, and imaging orders electronically, improving accuracy and reducing medication errors."
+  },
+  {
+    "id": 35,
+    "domain": "Analysis",
+    "question": "What is a 'Use Case' in system analysis?",
+    "options": ["A type of software license", "A description of how users interact with a system to accomplish a goal", "A legal document", "A type of database"],
+    "answer": "A description of how users interact with a system to accomplish a goal",
+    "explanation": "A use case describes a specific scenario or interaction between a user and a system, helping to understand system requirements and functionality."
+  },
+  {
+    "id": 36,
+    "domain": "Analysis",
+    "question": "Which analysis technique involves comparing the costs and benefits of a proposed project?",
+    "options": ["SWOT analysis", "Cost-benefit analysis", "Risk analysis", "Feasibility analysis"],
+    "answer": "Cost-benefit analysis",
+    "explanation": "Cost-benefit analysis compares the costs of implementing a project against the expected benefits to determine if the project is financially justified."
+  },
+  {
+    "id": 37,
+    "domain": "Design",
+    "question": "What is 'Scalability' in system design?",
+    "options": ["The ability to measure system performance", "The ability of a system to handle increased workload or growth", "The cost of the system", "The security of the system"],
+    "answer": "The ability of a system to handle increased workload or growth",
+    "explanation": "Scalability refers to a system's ability to handle increased data volume, users, or transactions without significant performance degradation."
+  },
+  {
+    "id": 38,
+    "domain": "Design",
+    "question": "Which design pattern is commonly used in healthcare IT systems to ensure data consistency?",
+    "options": ["Model-View-Controller", "Observer pattern", "Singleton pattern", "Factory pattern"],
+    "answer": "Model-View-Controller",
+    "explanation": "The Model-View-Controller (MVC) pattern separates data management, presentation, and user interaction, helping maintain data consistency and system maintainability."
+  },
+  {
+    "id": 39,
+    "domain": "Selection, Implementation, Support and Maintenance",
+    "question": "What is 'System Integration' in the context of healthcare IT?",
+    "options": ["Combining multiple systems to work together seamlessly", "Installing software on computers", "Training users on a new system", "Backing up system data"],
+    "answer": "Combining multiple systems to work together seamlessly",
+    "explanation": "System integration involves connecting different healthcare IT systems so they can share data and work together to support clinical and administrative processes."
+  },
+  {
+    "id": 40,
+    "domain": "Selection, Implementation, Support and Maintenance",
+    "question": "What is the primary purpose of 'System Maintenance'?",
+    "options": ["To add new features to the system", "To keep the system running smoothly and fix issues", "To train users", "To reduce system costs"],
+    "answer": "To keep the system running smoothly and fix issues",
+    "explanation": "System maintenance involves monitoring system performance, fixing bugs, applying updates, and ensuring the system continues to meet organizational needs."
+  },
+  {
+    "id": 41,
+    "domain": "Testing and Evaluation",
+    "question": "What is 'Regression Testing'?",
+    "options": ["Testing a system for the first time", "Testing to ensure that new changes don't break existing functionality", "Testing system performance under load", "Testing system security"],
+    "answer": "Testing to ensure that new changes don't break existing functionality",
+    "explanation": "Regression testing verifies that previously working functionality still works correctly after new changes or updates have been made to the system."
+  },
+  {
+    "id": 42,
+    "domain": "Testing and Evaluation",
+    "question": "Which testing approach involves testing the system under extreme conditions?",
+    "options": ["Unit testing", "Integration testing", "Stress testing", "Smoke testing"],
+    "answer": "Stress testing",
+    "explanation": "Stress testing evaluates how a system performs under extreme conditions, such as high user load or large data volumes, to identify breaking points."
+  },
+  {
+    "id": 43,
+    "domain": "Privacy and Security",
+    "question": "What is 'Encryption'?",
+    "options": ["A type of backup", "Converting data into a code to prevent unauthorized access", "A database management system", "A type of network"],
+    "answer": "Converting data into a code to prevent unauthorized access",
+    "explanation": "Encryption converts readable data into an encoded format that can only be read with the correct decryption key, protecting sensitive information from unauthorized access."
+  },
+  {
+    "id": 44,
+    "domain": "Privacy and Security",
+    "question": "What is a 'Security Audit'?",
+    "options": ["A financial review", "A systematic examination of security controls and practices", "A type of insurance", "A backup procedure"],
+    "answer": "A systematic examination of security controls and practices",
+    "explanation": "A security audit is a comprehensive review of an organization's security measures, policies, and procedures to identify vulnerabilities and ensure compliance with standards."
+  },
+  {
+    "id": 45,
+    "domain": "Management and Leadership",
+    "question": "What is 'Project Scope' in project management?",
+    "options": ["The budget for the project", "The defined boundaries of what will and will not be included in the project", "The timeline for the project", "The team size"],
+    "answer": "The defined boundaries of what will and will not be included in the project",
+    "explanation": "Project scope defines what work will be performed and what will not be performed, helping to prevent scope creep and manage stakeholder expectations."
+  },
+  {
+    "id": 46,
+    "domain": "Management and Leadership",
+    "question": "What is 'Risk Management' in healthcare IT projects?",
+    "options": ["Eliminating all risks", "Identifying, analyzing, and responding to potential risks", "Ignoring risks", "Transferring all risks to vendors"],
+    "answer": "Identifying, analyzing, and responding to potential risks",
+    "explanation": "Risk management involves systematically identifying potential risks, assessing their impact and probability, and developing strategies to mitigate or manage them."
+  },
+  {
+    "id": 47,
+    "domain": "Healthcare Environment",
+    "question": "What is 'Patient Safety' in healthcare?",
+    "options": ["Keeping patients in the hospital", "The prevention of errors and adverse events in patient care", "Reducing hospital costs", "Limiting patient access to information"],
+    "answer": "The prevention of errors and adverse events in patient care",
+    "explanation": "Patient safety encompasses the prevention of errors and adverse events in healthcare delivery, including medication errors, surgical errors, and healthcare-associated infections."
+  },
+  {
+    "id": 48,
+    "domain": "Healthcare Environment",
+    "question": "Which framework guides healthcare organizations in achieving meaningful use of EHR systems?",
+    "options": ["ITIL", "COBIT", "Meaningful Use criteria", "ISO 27001"],
+    "answer": "Meaningful Use criteria",
+    "explanation": "The Meaningful Use criteria provide specific requirements and measures that healthcare organizations must meet to demonstrate the effective use of certified EHR technology."
+  },
+  {
+    "id": 49,
+    "domain": "Technology Environment",
+    "question": "What is 'Data Warehouse' in healthcare IT?",
+    "options": ["A physical storage facility", "A centralized repository of integrated data from multiple sources for analysis", "A type of database software", "A backup system"],
+    "answer": "A centralized repository of integrated data from multiple sources for analysis",
+    "explanation": "A data warehouse consolidates data from multiple sources into a single repository, enabling comprehensive analysis and reporting for decision-making."
+  },
+  {
+    "id": 50,
+    "domain": "Technology Environment",
+    "question": "What is 'Application Programming Interface' (API)?",
+    "options": ["A type of software license", "A set of rules that allows different software applications to communicate", "A database management system", "A type of network"],
+    "answer": "A set of rules that allows different software applications to communicate",
+    "explanation": "An API defines how software components should interact, enabling different applications to communicate and share data seamlessly."
+  },
+  {
+    "id": 51,
+    "domain": "Clinical Informatics",
+    "question": "What is 'Nursing Informatics'?",
+    "options": ["A type of hospital department", "The specialty that integrates nursing science with informatics to support patient care", "A software application", "A type of insurance"],
+    "answer": "The specialty that integrates nursing science with informatics to support patient care",
+    "explanation": "Nursing informatics combines nursing knowledge with information technology to improve patient care delivery, clinical decision-making, and healthcare outcomes."
+  },
+  {
+    "id": 52,
+    "domain": "Clinical Informatics",
+    "question": "What is the primary purpose of 'Electronic Medication Administration Record' (eMAR)?",
+    "options": ["To store patient demographics", "To record medication administration electronically and reduce medication errors", "To manage hospital inventory", "To schedule staff shifts"],
+    "answer": "To record medication administration electronically and reduce medication errors",
+    "explanation": "eMAR systems allow nurses to electronically document medication administration, improving accuracy and reducing medication errors through real-time verification."
+  },
+  {
+    "id": 53,
+    "domain": "Analysis",
+    "question": "What is 'Gap Analysis' in system implementation?",
+    "options": ["Analyzing financial gaps", "Identifying the difference between current state and desired state", "Analyzing market gaps", "Identifying gaps in project funding"],
+    "answer": "Identifying the difference between current state and desired state",
+    "explanation": "Gap analysis compares current system capabilities and processes with desired future state, identifying what needs to be changed or improved."
+  },
+  {
+    "id": 54,
+    "domain": "Analysis",
+    "question": "What is 'Requirements Traceability Matrix' (RTM)?",
+    "options": ["A project budget document", "A document that links requirements to design elements and test cases", "A type of database", "A communication plan"],
+    "answer": "A document that links requirements to design elements and test cases",
+    "explanation": "An RTM ensures that all requirements are addressed in the design and testing phases, maintaining traceability throughout the project lifecycle."
+  },
+  {
+    "id": 55,
+    "domain": "Design",
+    "question": "What is 'Database Normalization'?",
+    "options": ["Backing up the database", "Organizing data to reduce redundancy and improve data integrity", "Encrypting the database", "Compressing the database"],
+    "answer": "Organizing data to reduce redundancy and improve data integrity",
+    "explanation": "Database normalization is a process of organizing data in a database to reduce redundancy and improve data integrity and query performance."
+  },
+  {
+    "id": 56,
+    "domain": "Design",
+    "question": "What is 'User Interface' (UI) design?",
+    "options": ["The backend code of the system", "The design of how users interact with the system visually", "The database structure", "The network configuration"],
+    "answer": "The design of how users interact with the system visually",
+    "explanation": "UI design focuses on the visual elements and interactive components that users see and interact with, including buttons, menus, forms, and layouts."
+  },
+  {
+    "id": 57,
+    "domain": "Selection, Implementation, Support and Maintenance",
+    "question": "What is 'Vendor Management' in healthcare IT?",
+    "options": ["Buying products from vendors", "The process of managing relationships with vendors and ensuring they meet contractual obligations", "Negotiating prices", "Selecting vendors only"],
+    "answer": "The process of managing relationships with vendors and ensuring they meet contractual obligations",
+    "explanation": "Vendor management involves ongoing oversight of vendor performance, contract compliance, and service delivery to ensure quality and value."
+  },
+  {
+    "id": 58,
+    "domain": "Selection, Implementation, Support and Maintenance",
+    "question": "What is 'Service Level Agreement' (SLA)?",
+    "options": ["A type of insurance", "A contract that specifies the level of service a vendor will provide", "A project charter", "A training document"],
+    "answer": "A contract that specifies the level of service a vendor will provide",
+    "explanation": "An SLA is a formal agreement between a service provider and customer that defines service levels, response times, and remedies for non-compliance."
+  },
+  {
+    "id": 59,
+    "domain": "Testing and Evaluation",
+    "question": "What is 'Performance Testing'?",
+    "options": ["Testing user satisfaction", "Testing how a system performs under normal and peak loads", "Testing system security", "Testing user training"],
+    "answer": "Testing how a system performs under normal and peak loads",
+    "explanation": "Performance testing measures system response times, throughput, and resource usage under various load conditions to ensure acceptable performance."
+  },
+  {
+    "id": 60,
+    "domain": "Testing and Evaluation",
+    "question": "What is 'Usability Testing'?",
+    "options": ["Testing system security", "Testing how easily users can use the system and accomplish tasks", "Testing system performance", "Testing data accuracy"],
+    "answer": "Testing how easily users can use the system and accomplish tasks",
+    "explanation": "Usability testing evaluates how intuitive and user-friendly a system is by observing actual users attempting to complete tasks."
+  },
+  {
+    "id": 61,
+    "domain": "Privacy and Security",
+    "question": "What is 'Authentication'?",
+    "options": ["Encrypting data", "Verifying the identity of a user or system", "Backing up data", "Organizing data"],
+    "answer": "Verifying the identity of a user or system",
+    "explanation": "Authentication is the process of verifying that a user or system is who they claim to be, typically through passwords, biometrics, or other credentials."
+  },
+  {
+    "id": 62,
+    "domain": "Privacy and Security",
+    "question": "What is 'Authorization'?",
+    "options": ["Verifying user identity", "Determining what an authenticated user is allowed to do", "Encrypting data", "Backing up data"],
+    "answer": "Determining what an authenticated user is allowed to do",
+    "explanation": "Authorization determines what actions and resources an authenticated user is permitted to access based on their role and permissions."
+  },
+  {
+    "id": 63,
+    "domain": "Management and Leadership",
+    "question": "What is 'Stakeholder Engagement' in project management?",
+    "options": ["Hiring stakeholders", "Involving and communicating with stakeholders throughout the project", "Paying stakeholders", "Ignoring stakeholder concerns"],
+    "answer": "Involving and communicating with stakeholders throughout the project",
+    "explanation": "Stakeholder engagement involves actively involving stakeholders in project decisions and maintaining open communication to ensure project success."
+  },
+  {
+    "id": 64,
+    "domain": "Management and Leadership",
+    "question": "What is 'Project Charter'?",
+    "options": ["A legal document", "A formal document that authorizes a project and defines its high-level objectives", "A budget document", "A training plan"],
+    "answer": "A formal document that authorizes a project and defines its high-level objectives",
+    "explanation": "A project charter is an official document that formally authorizes the project, defines its objectives, and grants the project manager authority to proceed."
+  },
+  {
+    "id": 65,
+    "domain": "Healthcare Environment",
+    "question": "What is 'Electronic Health Information Exchange' (eHIE)?",
+    "options": ["A type of hospital", "The secure electronic exchange of health information between healthcare organizations", "A software application", "A type of insurance"],
+    "answer": "The secure electronic exchange of health information between healthcare organizations",
+    "explanation": "eHIE enables healthcare organizations to securely share patient health information electronically to improve care coordination and reduce duplicate testing."
+  },
+  {
+    "id": 66,
+    "domain": "Healthcare Environment",
+    "question": "What is 'Accountable Care Organization' (ACO)?",
+    "options": ["A hospital department", "A network of healthcare providers who work together to improve care quality and reduce costs", "A type of insurance", "A government agency"],
+    "answer": "A network of healthcare providers who work together to improve care quality and reduce costs",
+    "explanation": "An ACO is a group of healthcare providers who share responsibility for improving care quality and reducing costs for a defined patient population."
+  },
+  {
+    "id": 67,
+    "domain": "Technology Environment",
+    "question": "What is 'Middleware' in healthcare IT systems?",
+    "options": ["A database", "Software that enables communication between different applications or systems", "A type of network", "A backup system"],
+    "answer": "Software that enables communication between different applications or systems",
+    "explanation": "Middleware acts as a bridge between different applications or systems, enabling them to communicate and exchange data seamlessly."
+  },
+  {
+    "id": 68,
+    "domain": "Technology Environment",
+    "question": "What is 'Master Data Management' (MDM)?",
+    "options": ["Managing project data", "The process of creating and maintaining accurate, consistent data across the organization", "A type of database", "A backup procedure"],
+    "answer": "The process of creating and maintaining accurate, consistent data across the organization",
+    "explanation": "MDM ensures that critical data (such as patient demographics) is accurate, consistent, and synchronized across all systems in the organization."
+  },
+  {
+    "id": 69,
+    "domain": "Clinical Informatics",
+    "question": "What is 'Health Information Exchange Standards'?",
+    "options": ["Types of hospitals", "Agreed-upon formats and protocols for exchanging health information", "Types of insurance", "Government regulations"],
+    "answer": "Agreed-upon formats and protocols for exchanging health information",
+    "explanation": "Health information exchange standards define how health data should be formatted, structured, and transmitted to enable interoperability between systems."
+  },
+  {
+    "id": 70,
+    "domain": "Clinical Informatics",
+    "question": "What is 'Clinical Workflow'?",
+    "options": ["A type of software", "The sequence of steps and processes that clinicians follow to deliver patient care", "A hospital department", "A type of insurance"],
+    "answer": "The sequence of steps and processes that clinicians follow to deliver patient care",
+    "explanation": "Clinical workflow encompasses all the steps, tasks, and interactions that healthcare providers perform to deliver patient care and manage patient information."
+  },
+  {
+    "id": 71,
+    "domain": "Analysis",
+    "question": "What is 'Business Process Reengineering' (BPR)?",
+    "options": ["Hiring new staff", "Fundamentally redesigning business processes to improve efficiency and effectiveness", "Reducing costs only", "Eliminating departments"],
+    "answer": "Fundamentally redesigning business processes to improve efficiency and effectiveness",
+    "explanation": "BPR involves rethinking and redesigning business processes from the ground up to achieve significant improvements in performance and efficiency."
+  },
+  {
+    "id": 72,
+    "domain": "Analysis",
+    "question": "What is 'Competitive Analysis'?",
+    "options": ["Analyzing employee performance", "Examining competitors' strategies, strengths, and weaknesses", "Analyzing financial performance", "Analyzing patient satisfaction"],
+    "answer": "Examining competitors' strategies, strengths, and weaknesses",
+    "explanation": "Competitive analysis involves researching and analyzing competitors' products, services, and strategies to inform organizational decision-making."
+  },
+  {
+    "id": 73,
+    "domain": "Design",
+    "question": "What is 'System Architecture'?",
+    "options": ["The building structure", "The overall design and structure of a system including components and their relationships", "A type of database", "A network design"],
+    "answer": "The overall design and structure of a system including components and their relationships",
+    "explanation": "System architecture defines how a system is organized, including its major components, their functions, and how they interact with each other."
+  },
+  {
+    "id": 74,
+    "domain": "Design",
+    "question": "What is 'Data Flow Diagram' (DFD)?",
+    "options": ["A financial chart", "A visual representation of how data moves through a system", "A type of database", "A network diagram"],
+    "answer": "A visual representation of how data moves through a system",
+    "explanation": "A DFD is a graphical tool that shows how data flows between processes, data stores, and external entities in a system."
+  },
+  {
+    "id": 75,
+    "domain": "Selection, Implementation, Support and Maintenance",
+    "question": "What is 'Training and Education' in system implementation?",
+    "options": ["Hiring new staff", "Providing users with knowledge and skills to use the new system effectively", "Reducing staff", "Eliminating departments"],
+    "answer": "Providing users with knowledge and skills to use the new system effectively",
+    "explanation": "Training and education programs ensure that users understand how to use the new system and can perform their tasks effectively after implementation."
+  },
+  {
+    "id": 76,
+    "domain": "Selection, Implementation, Support and Maintenance",
+    "question": "What is 'Documentation' in healthcare IT systems?",
+    "options": ["Patient records only", "Comprehensive written materials describing system functionality, processes, and procedures", "A type of database", "A backup procedure"],
+    "answer": "Comprehensive written materials describing system functionality, processes, and procedures",
+    "explanation": "Documentation includes user manuals, technical specifications, process descriptions, and other materials that help users understand and use the system."
+  },
+  {
+    "id": 77,
+    "domain": "Testing and Evaluation",
+    "question": "What is 'Black Box Testing'?",
+    "options": ["Testing only the database", "Testing a system without knowledge of its internal structure or code", "Testing only the user interface", "Testing only security"],
+    "answer": "Testing a system without knowledge of its internal structure or code",
+    "explanation": "Black box testing focuses on testing system functionality and behavior without examining the internal code, simulating how end-users interact with the system."
+  },
+  {
+    "id": 78,
+    "domain": "Testing and Evaluation",
+    "question": "What is 'White Box Testing'?",
+    "options": ["Testing only the interface", "Testing a system with knowledge of its internal structure and code", "Testing only functionality", "Testing only performance"],
+    "answer": "Testing a system with knowledge of its internal structure and code",
+    "explanation": "White box testing involves examining the internal code and structure of a system to identify logic errors and ensure all code paths are tested."
+  },
+  {
+    "id": 79,
+    "domain": "Privacy and Security",
+    "question": "What is 'Vulnerability Assessment'?",
+    "options": ["Assessing employee skills", "Systematically identifying security weaknesses in systems and processes", "Assessing financial risks", "Assessing market risks"],
+    "answer": "Systematically identifying security weaknesses in systems and processes",
+    "explanation": "Vulnerability assessment involves identifying, analyzing, and documenting security weaknesses that could be exploited by attackers."
+  },
+  {
+    "id": 80,
+    "domain": "Privacy and Security",
+    "question": "What is 'Penetration Testing'?",
+    "options": ["Testing employee loyalty", "Simulating attacks to identify security vulnerabilities", "Testing system performance", "Testing user satisfaction"],
+    "answer": "Simulating attacks to identify security vulnerabilities",
+    "explanation": "Penetration testing involves authorized attempts to exploit security vulnerabilities to identify weaknesses before malicious actors can exploit them."
+  },
+  {
+    "id": 81,
+    "domain": "Management and Leadership",
+    "question": "What is 'Quality Assurance' (QA)?",
+    "options": ["Reducing costs", "The process of ensuring that systems and processes meet defined quality standards", "Hiring new staff", "Eliminating departments"],
+    "answer": "The process of ensuring that systems and processes meet defined quality standards",
+    "explanation": "QA involves systematic monitoring and evaluation of systems and processes to ensure they meet established quality standards and requirements."
+  },
+  {
+    "id": 82,
+    "domain": "Management and Leadership",
+    "question": "What is 'Continuous Improvement'?",
+    "options": ["Increasing prices", "Ongoing efforts to enhance processes, products, and services", "Reducing staff", "Eliminating innovation"],
+    "answer": "Ongoing efforts to enhance processes, products, and services",
+    "explanation": "Continuous improvement involves systematically identifying and implementing enhancements to processes and systems to increase efficiency and effectiveness."
+  },
+  {
+    "id": 83,
+    "domain": "Healthcare Environment",
+    "question": "What is 'Patient-Centered Care'?",
+    "options": ["Care that focuses on hospital profits", "Care that respects and responds to individual patient preferences, needs, and values", "Care that minimizes patient involvement", "Care that reduces costs only"],
+    "answer": "Care that respects and responds to individual patient preferences, needs, and values",
+    "explanation": "Patient-centered care places the patient at the center of healthcare decisions, respecting their preferences, values, and individual needs."
+  },
+  {
+    "id": 84,
+    "domain": "Healthcare Environment",
+    "question": "What is 'Evidence-Based Practice' (EBP)?",
+    "options": ["Practice based on tradition", "Clinical practice informed by current best evidence, clinical expertise, and patient values", "Practice based on cost only", "Practice based on convenience"],
+    "answer": "Clinical practice informed by current best evidence, clinical expertise, and patient values",
+    "explanation": "EBP integrates current research evidence, clinical expertise, and patient preferences to guide clinical decision-making and improve outcomes."
+  },
+  {
+    "id": 85,
+    "domain": "Technology Environment",
+    "question": "What is 'Business Intelligence' (BI)?",
+    "options": ["Employee intelligence", "The process of analyzing data to support business decision-making", "A type of software license", "A backup system"],
+    "answer": "The process of analyzing data to support business decision-making",
+    "explanation": "BI involves collecting, analyzing, and presenting data to support strategic and tactical decision-making in healthcare organizations."
+  },
+  {
+    "id": 86,
+    "domain": "Technology Environment",
+    "question": "What is 'Artificial Intelligence' (AI) in healthcare?",
+    "options": ["Artificial employees", "The use of computer systems to perform tasks that typically require human intelligence", "A type of insurance", "A hospital department"],
+    "answer": "The use of computer systems to perform tasks that typically require human intelligence",
+    "explanation": "AI in healthcare involves using machine learning and other techniques to analyze data, support diagnosis, predict outcomes, and improve clinical decision-making."
+  },
+  {
+    "id": 87,
+    "domain": "Clinical Informatics",
+    "question": "What is 'Patient Portal'?",
+    "options": ["A hospital entrance", "A secure online platform that allows patients to access their health information and communicate with providers", "A type of insurance", "A hospital department"],
+    "answer": "A secure online platform that allows patients to access their health information and communicate with providers",
+    "explanation": "A patient portal enables patients to view their medical records, test results, and medication information, and communicate with their healthcare providers."
+  },
+  {
+    "id": 88,
+    "domain": "Clinical Informatics",
+    "question": "What is 'Mobile Health' (mHealth)?",
+    "options": ["Hospital mobility", "The use of mobile devices and applications to deliver healthcare services and health information", "A type of insurance", "A hospital department"],
+    "answer": "The use of mobile devices and applications to deliver healthcare services and health information",
+    "explanation": "mHealth leverages mobile technology to provide healthcare services, health information, and patient monitoring, improving access and convenience."
+  },
+  {
+    "id": 89,
+    "domain": "Analysis",
+    "question": "What is 'SWOT Analysis'?",
+    "options": ["A type of software", "An analysis of Strengths, Weaknesses, Opportunities, and Threats", "A database management system", "A backup procedure"],
+    "answer": "An analysis of Strengths, Weaknesses, Opportunities, and Threats",
+    "explanation": "SWOT analysis is a strategic planning tool that evaluates an organization's internal strengths and weaknesses and external opportunities and threats."
+  },
+  {
+    "id": 90,
+    "domain": "Analysis",
+    "question": "What is 'Feasibility Study'?",
+    "options": ["A financial audit", "An assessment of whether a project is technically, operationally, and financially viable", "A market analysis", "A competitor analysis"],
+    "answer": "An assessment of whether a project is technically, operationally, and financially viable",
+    "explanation": "A feasibility study evaluates the technical, operational, and financial viability of a proposed project to determine if it should proceed."
+  },
+  {
+    "id": 91,
+    "domain": "Design",
+    "question": "What is 'Redundancy' in system design?",
+    "options": ["Unnecessary duplication", "Having backup systems or components to ensure continuous operation if primary systems fail", "Reducing costs", "Eliminating features"],
+    "answer": "Having backup systems or components to ensure continuous operation if primary systems fail",
+    "explanation": "Redundancy involves duplicating critical components or systems to ensure that if one fails, another can take over, maintaining system availability."
+  },
+  {
+    "id": 92,
+    "domain": "Design",
+    "question": "What is 'Disaster Recovery Plan' (DRP)?",
+    "options": ["A project plan", "A documented procedure for recovering systems and data after a disaster", "A budget document", "A training plan"],
+    "answer": "A documented procedure for recovering systems and data after a disaster",
+    "explanation": "A DRP outlines the steps and procedures to restore systems and data after a disaster, minimizing downtime and data loss."
+  },
+  {
+    "id": 93,
+    "domain": "Selection, Implementation, Support and Maintenance",
+    "question": "What is 'Change Control' in system management?",
+    "options": ["Preventing all changes", "A formal process for managing and approving changes to systems and processes", "Reducing costs", "Eliminating updates"],
+    "answer": "A formal process for managing and approving changes to systems and processes",
+    "explanation": "Change control ensures that all changes to systems are properly evaluated, approved, and documented to minimize disruption and maintain system integrity."
+  },
+  {
+    "id": 94,
+    "domain": "Selection, Implementation, Support and Maintenance",
+    "question": "What is 'Patch Management'?",
+    "options": ["Repairing physical equipment", "The process of applying software updates and security patches to systems", "Backing up data", "Organizing files"],
+    "answer": "The process of applying software updates and security patches to systems",
+    "explanation": "Patch management involves identifying, testing, and deploying software updates and security patches to address vulnerabilities and improve system performance."
+  },
+  {
+    "id": 95,
+    "domain": "Testing and Evaluation",
+    "question": "What is 'Smoke Testing'?",
+    "options": ["Testing in a smoky environment", "A preliminary test to ensure basic functionality works before detailed testing", "Testing system security", "Testing user satisfaction"],
+    "answer": "A preliminary test to ensure basic functionality works before detailed testing",
+    "explanation": "Smoke testing is a quick, preliminary test to verify that the basic functionality of a system works before proceeding with more detailed testing."
+  },
+  {
+    "id": 96,
+    "domain": "Testing and Evaluation",
+    "question": "What is 'Acceptance Criteria'?",
+    "options": ["User satisfaction only", "Specific, measurable conditions that a system must meet to be accepted", "A type of contract", "A training document"],
+    "answer": "Specific, measurable conditions that a system must meet to be accepted",
+    "explanation": "Acceptance criteria define the specific requirements and conditions that a system must satisfy to be considered complete and acceptable by stakeholders."
+  },
+  {
+    "id": 97,
+    "domain": "Privacy and Security",
+    "question": "What is 'Data Breach'?",
+    "options": ["A database error", "Unauthorized access to or disclosure of sensitive data", "A system failure", "A network issue"],
+    "answer": "Unauthorized access to or disclosure of sensitive data",
+    "explanation": "A data breach occurs when unauthorized individuals gain access to sensitive information, potentially compromising patient privacy and security."
+  },
+  {
+    "id": 98,
+    "domain": "Privacy and Security",
+    "question": "What is 'Compliance' in healthcare IT?",
+    "options": ["Employee satisfaction", "Adherence to applicable laws, regulations, and standards", "Reducing costs", "Increasing revenue"],
+    "answer": "Adherence to applicable laws, regulations, and standards",
+    "explanation": "Compliance involves ensuring that healthcare IT systems and processes adhere to applicable laws, regulations, and industry standards such as HIPAA."
+  },
+  {
+    "id": 99,
+    "domain": "Management and Leadership",
+    "question": "What is 'Organizational Culture' in healthcare IT?",
+    "options": ["Employee entertainment", "The shared values, beliefs, and behaviors that characterize an organization", "A type of insurance", "A hospital department"],
+    "answer": "The shared values, beliefs, and behaviors that characterize an organization",
+    "explanation": "Organizational culture encompasses the shared values, beliefs, norms, and behaviors that influence how employees work and interact within the organization."
+  },
+  {
+    "id": 100,
+    "domain": "Management and Leadership",
+    "question": "What is 'Succession Planning' in healthcare IT?",
+    "options": ["Hiring new staff", "The process of identifying and developing future leaders and key personnel", "Reducing staff", "Eliminating positions"],
+    "answer": "The process of identifying and developing future leaders and key personnel",
+    "explanation": "Succession planning involves identifying high-potential employees and developing them to assume leadership roles and critical positions in the future."
   }
 ]
