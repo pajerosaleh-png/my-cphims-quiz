@@ -1,5 +1,6 @@
 import './style.css'
 import quizData from './cphims_questions.json'
+import seniorData from './senior_questions.json'
 
 interface Question {
   id: number
@@ -8,26 +9,29 @@ interface Question {
   options: string[]
   answer: string
   explanation: string
+  level?: string
 }
 
 interface QuizState {
-  mode: 'menu' | 'quiz' | 'results'
-  testType: 'practice' | 'timed' | 'fullexam' | 'mixed' | null
+  mode: 'menu' | 'quiz' | 'results' | 'review'
+  testType: 'practice' | 'timed' | 'fullexam' | 'mixed' | 'senior' | null
   currentQuestion: number
   score: number
   answered: boolean
   selectedAnswer: string | null
   showExplanation: boolean
   quizComplete: boolean
-  answers: { questionId: number; selected: string; correct: string }[]
+  answers: { questionId: number; selected: string; correct: string; skipped?: boolean }[]
   timeRemaining: number
   timerInterval: number | null
   totalTime: number
   questions: Question[]
   showTimeWarning: boolean
+  skippedQuestions: number[]
 }
 
 const questions: Question[] = quizData
+const seniorQuestions: Question[] = seniorData
 
 const state: QuizState = {
   mode: 'menu',
@@ -43,7 +47,8 @@ const state: QuizState = {
   timerInterval: null,
   totalTime: 0,
   questions: [],
-  showTimeWarning: false
+  showTimeWarning: false,
+  skippedQuestions: []
 }
 
 function shuffleArray<T>(array: T[]): T[] {
@@ -55,7 +60,7 @@ function shuffleArray<T>(array: T[]): T[] {
   return shuffled
 }
 
-function startQuiz(testType: 'practice' | 'timed' | 'fullexam' | 'mixed') {
+function startQuiz(testType: 'practice' | 'timed' | 'fullexam' | 'mixed' | 'senior') {
   state.testType = testType
   state.mode = 'quiz'
   state.currentQuestion = 0
@@ -66,17 +71,18 @@ function startQuiz(testType: 'practice' | 'timed' | 'fullexam' | 'mixed') {
   state.quizComplete = false
   state.answers = []
   state.showTimeWarning = false
+  state.skippedQuestions = []
 
-  // Set up questions based on test type
-  if (testType === 'mixed') {
+  if (testType === 'senior') {
+    state.questions = [...seniorQuestions]
+  } else if (testType === 'mixed') {
     state.questions = shuffleArray(questions)
   } else {
     state.questions = [...questions]
   }
 
-  // Set up timer for timed and fullexam modes
-  if (testType === 'timed' || testType === 'fullexam') {
-    state.totalTime = 120 * 60 // 120 minutes in seconds
+  if (testType === 'timed' || testType === 'fullexam' || testType === 'senior') {
+    state.totalTime = 120 * 60
     state.timeRemaining = state.totalTime
     startTimer()
   }
@@ -90,12 +96,10 @@ function startTimer() {
   state.timerInterval = window.setInterval(() => {
     state.timeRemaining--
 
-    // Warning at 5 minutes
     if (state.timeRemaining === 5 * 60) {
       state.showTimeWarning = true
     }
 
-    // Auto-complete if time runs out
     if (state.timeRemaining <= 0) {
       clearInterval(state.timerInterval!)
       state.quizComplete = true
@@ -148,10 +152,16 @@ function renderMenu() {
             <div class="menu-btn-title">🔀 Mixed Mode</div>
             <div class="menu-btn-desc">Random order questions</div>
           </button>
+
+          <button class="menu-btn" onclick="startQuiz('senior')">
+            <div class="menu-btn-title">🎓 Senior/Advanced</div>
+            <div class="menu-btn-desc">50 scenario-based questions</div>
+          </button>
         </div>
 
         <div class="menu-info">
-          <p><strong>Total Questions:</strong> 100</p>
+          <p><strong>Standard Modes:</strong> 100 questions</p>
+          <p><strong>Senior/Advanced:</strong> 50 scenario questions</p>
           <p><strong>Passing Score:</strong> 70%</p>
           <p><strong>Domains Covered:</strong> 9 CPHIMS domains</p>
         </div>
@@ -170,9 +180,10 @@ function renderQuiz() {
 
   const question = state.questions[state.currentQuestion]
   const progress = ((state.currentQuestion + 1) / state.questions.length) * 100
+  const skippedCount = state.skippedQuestions.length
 
   let timerHTML = ''
-  if (state.testType === 'timed' || state.testType === 'fullexam') {
+  if (state.testType === 'timed' || state.testType === 'fullexam' || state.testType === 'senior') {
     const timerClass = state.timeRemaining < 5 * 60 ? 'timer-warning' : ''
     timerHTML = `
       <div class="timer-container ${timerClass}">
@@ -193,12 +204,168 @@ function renderQuiz() {
     <div class="quiz-container">
       <div class="quiz-header">
         <h1>CPHIMS Self-Assessment Quiz</h1>
-        <div class="quiz-mode-badge">${state.testType === 'practice' ? '📚 Practice' : state.testType === 'timed' ? '⏱️ Timed' : state.testType === 'fullexam' ? '📋 Full Exam' : '🔀 Mixed'}</div>
+        <div class="quiz-mode-badge">${state.testType === 'practice' ? '📚 Practice' : state.testType === 'timed' ? '⏱️ Timed' : state.testType === 'fullexam' ? '📋 Full Exam' : state.testType === 'mixed' ? '🔀 Mixed' : '🎓 Senior'}</div>
         ${timerHTML}
         <div class="progress-bar">
           <div class="progress-fill" style="width: ${progress}%"></div>
         </div>
-        <p class="progress-text">Question ${state.currentQuestion + 1} of ${state.questions.length}</p>
+        <p class="progress-text">Question ${state.currentQuestion + 1} of ${state.questions.length} ${skippedCount > 0 ? `| Skipped: ${skippedCount}` : ''}</p>
+      </div>
+
+      <div class="quiz-content">
+        <div class="domain-badge">${question.domain} ${question.level ? `<span class="level-badge">${question.level.toUpperCase()}</span>` : ''}</div>
+        <h2>${question.question}</h2>
+
+        <div class="options">
+          ${question.options
+            .map(
+              (option, index) => `
+            <button 
+              class="option-btn ${state.selectedAnswer === option ? 'selected' : ''} ${
+                state.answered && option === question.answer ? 'correct' : ''
+              } ${state.answered && state.selectedAnswer === option && option !== question.answer ? 'incorrect' : ''}"
+              onclick="selectAnswer('${option.replace(/'/g, "\\'")}')"
+              ${state.answered ? 'disabled' : ''}
+            >
+              <span class="option-letter">${String.fromCharCode(65 + index)}</span>
+              <span class="option-text">${option}</span>
+              ${state.answered && option === question.answer ? '<span class="checkmark">✓</span>' : ''}
+              ${state.answered && state.selectedAnswer === option && option !== question.answer ? '<span class="xmark">✗</span>' : ''}
+            </button>
+          `
+            )
+            .join('')}
+        </div>
+
+        ${
+          state.showExplanation
+            ? `
+          <div class="explanation">
+            <h3>Explanation</h3>
+            <p>${question.explanation}</p>
+          </div>
+        `
+            : ''
+        }
+
+        <div class="button-group">
+          ${
+            !state.answered
+              ? `
+              <button class="btn btn-primary" onclick="submitAnswer()">Submit Answer</button>
+              <button class="btn btn-warning" onclick="skipQuestion()">⏭️ Skip Question</button>
+            `
+              : `
+              <button class="btn btn-primary" onclick="nextQuestion()">
+                ${state.currentQuestion === state.questions.length - 1 ? 'View Results' : 'Next Question'}
+              </button>
+            `
+          }
+          <button class="btn btn-secondary" onclick="exitQuiz()">Exit Quiz</button>
+        </div>
+      </div>
+    </div>
+  `
+}
+
+function renderResults(app: HTMLDivElement) {
+  if (state.timerInterval) clearInterval(state.timerInterval)
+
+  const percentage = Math.round((state.score / state.questions.length) * 100)
+  const passingScore = 70
+  const skippedCount = state.skippedQuestions.length
+
+  const detailedResults = state.answers
+    .map((answer, index) => {
+      const isCorrect = answer.selected === answer.correct
+      const isSkipped = answer.skipped
+      const statusClass = isCorrect ? 'correct' : isSkipped ? 'skipped' : 'incorrect'
+      const statusText = isSkipped ? '⏭️ Skipped' : isCorrect ? '✓ Correct' : '✗ Incorrect'
+      const answerContent = !isSkipped 
+        ? `<p class="result-answer"><strong>Your answer:</strong> ${answer.selected}</p>
+           ${answer.selected !== answer.correct ? `<p class="result-answer correct-answer"><strong>Correct answer:</strong> ${answer.correct}</p>` : ''}`
+        : ''
+      
+      return `
+        <div class="result-item ${statusClass}">
+          <div class="result-header">
+            <span class="result-number">Q${index + 1}</span>
+            <span class="result-status">${statusText}</span>
+          </div>
+          <p class="result-question">${state.questions[index].question}</p>
+          ${answerContent}
+        </div>
+      `
+    })
+    .join('')
+
+  app.innerHTML = `
+    <div class="quiz-container">
+      <div class="results-container">
+        <h1>Quiz Complete!</h1>
+        
+        <div class="score-display">
+          <div class="score-circle ${percentage >= passingScore ? 'pass' : 'fail'}">
+            <span class="score-number">${percentage}%</span>
+          </div>
+          <p class="score-text">
+            You scored <strong>${state.score} out of ${state.questions.length}</strong> questions correctly.
+          </p>
+          ${skippedCount > 0 ? `<p class="skipped-text">Skipped: <strong>${skippedCount}</strong> questions</p>` : ''}
+          <p class="pass-status ${percentage >= passingScore ? 'pass-text' : 'fail-text'}">
+            ${percentage >= passingScore ? '✓ Passing Score' : '✗ Below Passing Score (70% required)'}
+          </p>
+        </div>
+
+        <div class="results-summary">
+          <h2>Results by Domain</h2>
+          ${getDomainBreakdown()}
+        </div>
+
+        ${skippedCount > 0 ? `
+          <div class="skipped-section">
+            <h2>Skipped Questions</h2>
+            <button class="btn btn-info" onclick="reviewSkipped()">📝 Review Skipped Questions</button>
+          </div>
+        ` : ''}
+
+        <div class="detailed-results">
+          <h2>Detailed Review</h2>
+          ${detailedResults}
+        </div>
+
+        <div class="button-group">
+          <button class="btn btn-primary" onclick="goToMenu()">Back to Menu</button>
+          <button class="btn btn-secondary" onclick="restartQuiz()">Retake Test</button>
+        </div>
+      </div>
+    </div>
+  `
+}
+
+function reviewSkipped() {
+  state.mode = 'review'
+  state.currentQuestion = state.skippedQuestions[0]
+  state.answered = false
+  state.selectedAnswer = null
+  state.showExplanation = false
+  renderReview()
+}
+
+function renderReview() {
+  const app = document.querySelector<HTMLDivElement>('#app')!
+  const skippedIndices = state.skippedQuestions
+  const currentSkippedIndex = skippedIndices.indexOf(state.currentQuestion)
+  const question = state.questions[state.currentQuestion]
+
+  app.innerHTML = `
+    <div class="quiz-container">
+      <div class="quiz-header">
+        <h1>Review Skipped Questions</h1>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: ${((currentSkippedIndex + 1) / skippedIndices.length) * 100}%"></div>
+        </div>
+        <p class="progress-text">Skipped Question ${currentSkippedIndex + 1} of ${skippedIndices.length}</p>
       </div>
 
       <div class="quiz-content">
@@ -241,67 +408,11 @@ function renderQuiz() {
           ${
             !state.answered
               ? `<button class="btn btn-primary" onclick="submitAnswer()">Submit Answer</button>`
-              : `<button class="btn btn-primary" onclick="nextQuestion()">
-              ${state.currentQuestion === state.questions.length - 1 ? 'View Results' : 'Next Question'}
+              : `<button class="btn btn-primary" onclick="nextSkipped()">
+              ${currentSkippedIndex === skippedIndices.length - 1 ? 'Back to Results' : 'Next Skipped'}
             </button>`
           }
-          <button class="btn btn-secondary" onclick="exitQuiz()">Exit Quiz</button>
-        </div>
-      </div>
-    </div>
-  `
-}
-
-function renderResults(app: HTMLDivElement) {
-  if (state.timerInterval) clearInterval(state.timerInterval)
-
-  const percentage = Math.round((state.score / state.questions.length) * 100)
-  const passingScore = 70
-
-  app.innerHTML = `
-    <div class="quiz-container">
-      <div class="results-container">
-        <h1>Quiz Complete!</h1>
-        
-        <div class="score-display">
-          <div class="score-circle ${percentage >= passingScore ? 'pass' : 'fail'}">
-            <span class="score-number">${percentage}%</span>
-          </div>
-          <p class="score-text">
-            You scored <strong>${state.score} out of ${state.questions.length}</strong> questions correctly.
-          </p>
-          <p class="pass-status ${percentage >= passingScore ? 'pass-text' : 'fail-text'}">
-            ${percentage >= passingScore ? '✓ Passing Score' : '✗ Below Passing Score (70% required)'}
-          </p>
-        </div>
-
-        <div class="results-summary">
-          <h2>Results by Domain</h2>
-          ${getDomainBreakdown()}
-        </div>
-
-        <div class="detailed-results">
-          <h2>Detailed Review</h2>
-          ${state.answers
-            .map(
-              (answer, index) => `
-            <div class="result-item ${answer.selected === answer.correct ? 'correct' : 'incorrect'}">
-              <div class="result-header">
-                <span class="result-number">Q${index + 1}</span>
-                <span class="result-status">${answer.selected === answer.correct ? '✓ Correct' : '✗ Incorrect'}</span>
-              </div>
-              <p class="result-question">${state.questions[index].question}</p>
-              <p class="result-answer"><strong>Your answer:</strong> ${answer.selected}</p>
-              ${answer.selected !== answer.correct ? `<p class="result-answer correct-answer"><strong>Correct answer:</strong> ${answer.correct}</p>` : ''}
-            </div>
-          `
-            )
-            .join('')}
-        </div>
-
-        <div class="button-group">
-          <button class="btn btn-primary" onclick="goToMenu()">Back to Menu</button>
-          <button class="btn btn-secondary" onclick="restartQuiz()">Retake Test</button>
+          <button class="btn btn-secondary" onclick="backToResults()">Back to Results</button>
         </div>
       </div>
     </div>
@@ -316,27 +427,29 @@ function getDomainBreakdown(): string {
       domainScores[q.domain] = { correct: 0, total: 0 }
     }
     domainScores[q.domain].total++
-    if (state.answers[index] && state.answers[index].selected === state.answers[index].correct) {
+    if (state.answers[index] && !state.answers[index].skipped && state.answers[index].selected === state.answers[index].correct) {
       domainScores[q.domain].correct++
     }
   })
 
   return Object.entries(domainScores)
-    .map(
-      ([domain, scores]) => `
+    .map(([domain, scores]) => `
     <div class="domain-result">
       <span class="domain-name">${domain}</span>
       <span class="domain-score">${scores.correct}/${scores.total}</span>
     </div>
-  `
-    )
+  `)
     .join('')
 }
 
 function selectAnswer(answer: string) {
   if (!state.answered) {
     state.selectedAnswer = answer
-    renderQuiz()
+    if (state.mode === 'quiz') {
+      renderQuiz()
+    } else {
+      renderReview()
+    }
   }
 }
 
@@ -353,14 +466,33 @@ function submitAnswer() {
   state.answers.push({
     questionId: question.id,
     selected: state.selectedAnswer,
-    correct: question.answer
+    correct: question.answer,
+    skipped: false
   })
 
   if (state.selectedAnswer === question.answer) {
     state.score++
   }
 
-  renderQuiz()
+  if (state.mode === 'quiz') {
+    renderQuiz()
+  } else {
+    renderReview()
+  }
+}
+
+function skipQuestion() {
+  const question = state.questions[state.currentQuestion]
+  
+  state.answers.push({
+    questionId: question.id,
+    selected: '',
+    correct: question.answer,
+    skipped: true
+  })
+
+  state.skippedQuestions.push(state.currentQuestion)
+  nextQuestion()
 }
 
 function nextQuestion() {
@@ -377,6 +509,26 @@ function nextQuestion() {
   }
 }
 
+function nextSkipped() {
+  const skippedIndices = state.skippedQuestions
+  const currentSkippedIndex = skippedIndices.indexOf(state.currentQuestion)
+  
+  if (currentSkippedIndex < skippedIndices.length - 1) {
+    state.currentQuestion = skippedIndices[currentSkippedIndex + 1]
+    state.answered = false
+    state.selectedAnswer = null
+    state.showExplanation = false
+    renderReview()
+  } else {
+    backToResults()
+  }
+}
+
+function backToResults() {
+  state.mode = 'results'
+  renderResults(document.querySelector<HTMLDivElement>('#app')!)
+}
+
 function exitQuiz() {
   if (confirm('Are you sure you want to exit? Your progress will be lost.')) {
     if (state.timerInterval) clearInterval(state.timerInterval)
@@ -386,7 +538,7 @@ function exitQuiz() {
 
 function restartQuiz() {
   if (state.testType) {
-    startQuiz(state.testType)
+    startQuiz(state.testType as 'practice' | 'timed' | 'fullexam' | 'mixed' | 'senior')
   }
 }
 
@@ -402,17 +554,20 @@ function goToMenu() {
   state.quizComplete = false
   state.answers = []
   state.showTimeWarning = false
+  state.skippedQuestions = []
   renderMenu()
 }
 
-// Initialize the quiz
 renderMenu()
 
-// Make functions globally available
 ;(window as any).startQuiz = startQuiz
 ;(window as any).selectAnswer = selectAnswer
 ;(window as any).submitAnswer = submitAnswer
+;(window as any).skipQuestion = skipQuestion
 ;(window as any).nextQuestion = nextQuestion
+;(window as any).nextSkipped = nextSkipped
 ;(window as any).exitQuiz = exitQuiz
 ;(window as any).restartQuiz = restartQuiz
 ;(window as any).goToMenu = goToMenu
+;(window as any).reviewSkipped = reviewSkipped
+;(window as any).backToResults = backToResults

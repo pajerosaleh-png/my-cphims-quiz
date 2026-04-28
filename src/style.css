@@ -619,6 +619,74 @@ body {
   }
 }
 
+.btn-warning {
+  background: var(--warning);
+  color: white;
+
+  &:hover:not(:disabled) {
+    background: #d97706;
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+}
+
+.btn-info {
+  background: var(--primary);
+  color: white;
+
+  &:hover:not(:disabled) {
+    background: var(--primary-dark);
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+}
+
+.level-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  margin-left: 8px;
+  font-weight: 600;
+}
+
+.skipped-text {
+  font-size: 16px;
+  color: var(--warning);
+  margin: 10px 0 0 0;
+
+  strong {
+    color: var(--warning);
+  }
+}
+
+.skipped-section {
+  background: var(--bg-light);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  border-left: 4px solid var(--warning);
+}
+
+.skipped-section h2 {
+  margin-top: 0;
+}
+
+.result-item.skipped {
+  border-left-color: var(--warning);
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.result-item.skipped .result-status {
+  color: var(--warning);
+}
+
 /* Responsive adjustments */
 @media (max-width: 600px) {
   .quiz-header {
